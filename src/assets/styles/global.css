@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Pixelify+Sans:wght@500;600;700&display=swap');
+
+:root {
+  /* Pastel Color Palette */
+  --bg-primary: #FAF5EA;
+  --bg-card: #FFFDF7;
+  --bg-card-alt: #F4EBE0;
+  --bg-darker: #EFE4D4;
+
+  --color-brand: #7C5C43;
+  --color-brand-dark: #4A3525;
+  --color-accent-green: #D4E7C5;
+  --color-accent-green-dark: #7A9E60;
+  --color-accent-rose: #F4E0E8;
+  --color-accent-rose-dark: #C47B95;
+  --color-accent-yellow: #FBF0D9;
+  --color-accent-yellow-dark: #D4A340;
+  --color-accent-blue: #E2F0F7;
+  --color-accent-blue-dark: #588DA8;
+
+  --color-text-main: #3A2E28;
+  --color-text-sub: #756357;
+  --color-text-light: #A39386;
+
+  /* State Colors */
+  --color-success: #70AB69;
+  --color-warning: #E08E45;
+  --color-danger: #D9534F;
+  --color-flagged: #E5A93C;
+
+  /* Typography */
+  --font-game: 'Fredoka', 'Nunito', sans-serif;
+  --font-pixel: 'Pixelify Sans', cursive;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* Shadows & Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --shadow-cozy: 0 8px 24px rgba(74, 53, 37, 0.08);
+  --shadow-button: 0 4px 0 #7C5C43;
+  --shadow-button-green: 0 4px 0 #688C4E;
+  --shadow-button-rose: 0 4px 0 #B36882;
+
+  --border-cozy: 2px solid #E3D5C5;
+  --border-bold: 3px solid #7C5C43;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 231, 197, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(244, 224, 232, 0.3) 0%, transparent 40%);
+  overflow-x: hidden;
+}
+
+/* Base Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #D9C8B5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-game);
+  color: var(--color-brand-dark);
+}
+
+.font-pixel-accent {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.5px;
+}
+
+/* Pixel Card Styling */
+.cozy-card {
+  background: var(--bg-card);
+  border: var(--border-bold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-cozy);
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.cozy-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(74, 53, 37, 0.12);
+}
+
+/* Cute Pixel Button Styles */
+.cozy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-game);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: var(--border-bold);
+  background: var(--bg-card);
+  color: var(--color-brand-dark);
+  box-shadow: var(--shadow-button);
+  transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+}
+
+.cozy-btn:hover {
+  transform: translateY(-2px);
+  background: #FFFBF2;
+}
+
+.cozy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #7C5C43;
+}
+
+.cozy-btn-primary {
+  background: var(--color-accent-green);
+  color: #2F4221;
+  border-color: #55753F;
+  box-shadow: var(--shadow-button-green);
+}
+.cozy-btn-primary:hover {
+  background: #E2F0D8;
+}
+
+.cozy-btn-rose {
+  background: var(--color-accent-rose);
+  color: #5C2B3F;
+  border-color: #9C4D6B;
+  box-shadow: var(--shadow-button-rose);
+}
+.cozy-btn-rose:hover {
+  background: #F9ECF2;
+}
+
+.cozy-btn-sm {
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 3px 0 #7C5C43;
+}
+.cozy-btn-sm:active {
+  box-shadow: 0 1px 0 #7C5C43;
+}
+
+/* Cute Badge Styling */
+.cozy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-game);
+  font-size: 0.825rem;
+  font-weight: 600;
+  border: 1.5px solid var(--color-brand-dark);
+  background: var(--bg-card-alt);
+  color: var(--color-brand-dark);
+}
+
+/* --- ANIMATIONS --- */
+
+/* Gentle Float */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Subtle Idle Breathing for Mascots */
+@keyframes mascotBreathing {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.025) translateY(-3px);
+  }
+}
+
+/* Mascot Click Bounce */
+@keyframes mascotTapBounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.9) translateY(4px); }
+  60% { transform: scale(1.15) translateY(-12px); }
+  80% { transform: scale(0.98) translateY(2px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 3.5s ease-in-out infinite;
+}
+
+.animate-mascot-idle {
+  animation: mascotBreathing 4s ease-in-out infinite;
+}
+
+.animate-mascot-tap {
+  animation: mascotTapBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-slide-up {
+  animation: cardSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Layout Utilities */
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* Modal Overlay */
+.cozy-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(74, 53, 37, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.cozy-modal-content {
+  background: var(--bg-card);
+  border: var(--border-bold);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  animation: cardSlideUp 0.3s ease;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 12px 24px;
+  }
+  .cozy-card {
+    padding: 16px;
+  }
+}

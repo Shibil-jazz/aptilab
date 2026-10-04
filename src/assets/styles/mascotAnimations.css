@@ -1,0 +1,231 @@
+/* Mascot Body Part Micro-Keyframe Animations (Polished & Subtle) */
+
+/* Natural Eye Blinking (Runs every 4.2 seconds: 95% open, 98% blink, 100% open) */
+@keyframes eyeBlink {
+  0%, 95%, 100% {
+    transform: scaleY(1);
+  }
+  97.5% {
+    transform: scaleY(0.08);
+  }
+}
+
+/* Subtle Pupil Glance */
+@keyframes pupilGlance {
+  0%, 80%, 100% {
+    transform: translateX(0);
+  }
+  85%, 92% {
+    transform: translateX(1px);
+  }
+}
+
+/* Micro Ear Twitch (Bear, Lamb, Mouse, Cat) - Max 2° rotation from hidden base */
+@keyframes earMicroTwitch {
+  0%, 88%, 100% {
+    transform: rotate(0deg);
+  }
+  92% {
+    transform: rotate(-2deg);
+  }
+  96% {
+    transform: rotate(1.5deg);
+  }
+}
+
+/* Micro Tail Wag (Puppy) - Max 2.5° rotation from hidden root joint */
+@keyframes tailMicroWag {
+  0%, 100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+/* Micro Tail Swish (Cat) - Max 2° rotation from hidden root joint */
+@keyframes tailMicroSwish {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Micro Tail Curl (Mouse) - Max 2° rotation from hidden root joint */
+@keyframes tailMicroCurl {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Micro Wing Flap (Parrot, Crow) - Max -2.5° rotation from shoulder joint */
+@keyframes wingMicroFlap {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-2.5deg);
+  }
+}
+
+/* Micro Flipper Flap (Penguin) - Max 2° rotation from shoulder joint */
+@keyframes flipperMicroFlap {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Micro Head Tilt (Puppy, Crow, Parrot) - Max 2° rotation from neck joint */
+@keyframes headMicroTilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Micro Head Bob (Parrot) - Max 1.5px vertical movement */
+@keyframes headMicroBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+}
+
+/* Micro Body Rock (Penguin) - Max 1.5° rotation */
+@keyframes bodyMicroRock {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+/* Micro Pencil Scribble (Thinking Mode) - Max 1.5px movement */
+@keyframes pencilMicroScribble {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(1.5px, -1px) rotate(2deg);
+  }
+}
+
+/* Subtle Chest Breathing (1.2% scaleY vertical change) */
+@keyframes chestMicroBreathing {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.012);
+  }
+}
+
+/* Tap Click Micro-Hop (350ms) */
+@keyframes tapMicroHop {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-3px); }
+  70% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
+
+/* CSS Animation Utility Classes with Enforced SVG Fill-Box */
+.anim-blink {
+  animation: eyeBlink 4.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.anim-pupil {
+  animation: pupilGlance 5.5s ease-in-out infinite;
+}
+
+.anim-ear-twitch {
+  animation: earMicroTwitch 3.8s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-tail-wag {
+  animation: tailMicroWag 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-tail-swish {
+  animation: tailMicroSwish 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-tail-curl {
+  animation: tailMicroCurl 3.5s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-wing-flap {
+  animation: wingMicroFlap 2.8s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-flipper-flap {
+  animation: flipperMicroFlap 3s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-head-tilt {
+  animation: headMicroTilt 4.2s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-head-bob {
+  animation: headMicroBob 3.5s ease-in-out infinite;
+}
+
+.anim-waddle-rock {
+  animation: bodyMicroRock 2.6s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.anim-pencil-scribble {
+  animation: pencilMicroScribble 1.8s ease-in-out infinite;
+}
+
+.anim-breathing {
+  animation: chestMicroBreathing 4.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+
+.animate-mascot-tap-micro {
+  animation: tapMicroHop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  .anim-blink,
+  .anim-pupil,
+  .anim-ear-twitch,
+  .anim-tail-wag,
+  .anim-tail-swish,
+  .anim-tail-curl,
+  .anim-wing-flap,
+  .anim-flipper-flap,
+  .anim-head-tilt,
+  .anim-head-bob,
+  .anim-waddle-rock,
+  .anim-pencil-scribble,
+  .anim-breathing,
+  .animate-mascot-tap-micro {
+    animation: none !important;
+  }
+}
